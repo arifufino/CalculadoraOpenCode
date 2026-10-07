@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d42">
+  <title>Calculadora de notas | EPN</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="brand">
+      <span class="brand-mark" aria-hidden="true">E</span>
+      <span>ESTUDIANTES <strong>EPN</strong></span>
+    </header>
+
+    <section class="calculator" aria-labelledby="page-title">
+      <p class="eyebrow">TU PROGRESO ACADÉMICO</p>
+      <h1 id="page-title">Calculadora de notas</h1>
+      <p class="intro">Ingresa tus aportes para conocer tu resultado y planificar tu siguiente paso.</p>
+
+      <form id="grade-form" novalidate>
+        <div class="fields">
+          <div class="field">
+            <label for="first-grade">Primer aporte</label>
+            <div class="input-wrap">
+              <input id="first-grade" name="first-grade" type="number" min="0" max="20" step="any" inputmode="decimal" placeholder="0.00" required aria-describedby="first-hint">
+              <span class="input-suffix">/ 20</span>
+            </div>
+            <small id="first-hint">Nota entre 0 y 20</small>
+          </div>
+          <div class="field">
+            <label for="second-grade">Segundo aporte</label>
+            <div class="input-wrap">
+              <input id="second-grade" name="second-grade" type="number" min="0" max="20" step="any" inputmode="decimal" placeholder="0.00" required aria-describedby="second-hint">
+              <span class="input-suffix">/ 20</span>
+            </div>
+            <small id="second-hint">Nota entre 0 y 20</small>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="button button-primary" type="submit">Calcular <span aria-hidden="true">→</span></button>
+          <button class="button button-secondary" type="reset">Limpiar</button>
+        </div>
+      </form>
+
+      <div id="result" class="result" role="status" aria-live="polite" hidden></div>
+      <p class="scale-note"><span aria-hidden="true">ⓘ</span> La nota acumulada se calcula sobre 40 puntos.</p>
+    </section>
+    <footer>Hecho para acompañar tu camino académico.</footer>
+  </main>
+</body>
+</html>

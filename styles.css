@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --ink: #e7f0f2;
+  --muted: #a3b5bd;
+  --teal: #35b7ad;
+  --teal-dark: #269c94;
+  --line: #30464f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--ink);
+  background: #101a20;
+  font-family: 'DM Sans', sans-serif;
+  display: grid;
+  place-items: center;
+  padding: 36px 20px;
+}
+
+.page-shell { width: min(100%, 560px); }
+.brand { display: flex; align-items: center; gap: 12px; margin: 0 0 24px 4px; color: #9aadb5; font-size: 11px; letter-spacing: .14em; }
+.brand strong { color: var(--ink); font-weight: 700; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px 10px 10px 3px; background: var(--teal); color: white; font: 800 18px 'Manrope', sans-serif; }
+
+.calculator {
+  padding: 44px 48px 30px;
+  border: 1px solid #293a42;
+  border-radius: 18px;
+  background: #1a282f;
+  box-shadow: 0 18px 50px #00000030, 0 2px 8px #00000020;
+}
+.eyebrow { margin: 0 0 10px; color: var(--teal); font-size: 10px; font-weight: 700; letter-spacing: .17em; }
+h1 { margin: 0; font: 800 clamp(26px, 6vw, 32px)/1.2 'Manrope', sans-serif; letter-spacing: -.045em; }
+.intro { max-width: 400px; margin: 12px 0 30px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field label { display: block; margin-bottom: 9px; font-size: 13px; font-weight: 600; }
+.input-wrap { position: relative; }
+input { width: 100%; height: 52px; padding: 0 55px 0 15px; border: 1px solid #3a505a; border-radius: 8px; outline: none; background: #142127; color: var(--ink); font: 600 16px 'DM Sans', sans-serif; transition: border-color .18s, box-shadow .18s; }
+input::placeholder { color: #71848c; }
+input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px #087e8018; }
+input[aria-invalid="true"] { border-color: #bd4c47; }
+.input-suffix { position: absolute; top: 50%; right: 14px; transform: translateY(-50%); color: #9aadb5; font-size: 12px; }
+.field small { display: block; margin: 7px 0 0 2px; color: #91a3aa; font-size: 11px; }
+.actions { display: flex; gap: 10px; margin-top: 26px; }
+.button { min-height: 46px; padding: 0 20px; border: 1px solid transparent; border-radius: 7px; font: 600 13px 'DM Sans', sans-serif; cursor: pointer; transition: background .18s, transform .18s; }
+.button:active { transform: translateY(1px); }
+.button-primary { flex: 1; display: flex; align-items: center; justify-content: center; gap: 12px; background: var(--teal); color: #092321; }
+.button-primary:hover { background: var(--teal-dark); }
+.button-primary span { font-size: 17px; }
+.button-secondary { border-color: var(--line); background: #1a282f; color: #c0cdd1; }
+.button-secondary:hover { background: #24353d; }
+.result { margin-top: 22px; padding: 15px 16px; border: 1px solid; border-radius: 8px; font-size: 13px; line-height: 1.6; }
+.result[hidden] { display: none; }
+.result strong { display: block; margin-bottom: 2px; font-size: 15px; }
+.result.approved { border-color: #28694a; background: #172e26; color: #9be0b7; }
+.result.recovery { border-color: #705d31; background: #30291b; color: #f0d28a; }
+.result.failed, .result.error { border-color: #713e3b; background: #321f20; color: #f0aaa5; }
+.scale-note { display: flex; align-items: center; gap: 7px; margin: 24px 0 0; padding-top: 18px; border-top: 1px solid #304149; color: #9aadb5; font-size: 11px; }
+footer { padding: 20px 0 0; color: #879ba3; text-align: center; font-size: 11px; }
+
+@media (max-width: 520px) {
+  body { padding: 24px 16px; }
+  .brand { margin-bottom: 18px; }
+  .calculator { padding: 32px 24px 24px; border-radius: 14px; }
+  .intro { margin-bottom: 25px; }
+  .fields { grid-template-columns: 1fr; gap: 17px; }
+  .actions { margin-top: 23px; }
+}
+
+@media (max-width: 360px) {
+  .calculator { padding-right: 19px; padding-left: 19px; }
+  .actions { flex-direction: column; }
+}
